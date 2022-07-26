@@ -1,0 +1,58 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">CRM</li>
+      <li class="breadcrumb-item active">Elenco</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>Elenco donatori</h1>
+
+{{^ lc.acc_donationTab.hasData }}
+<div class="alert alert-info" role="alert">
+  <strong>{{{ cr.T.msg_Attention }}}</strong> {{ cr.T.msg_NoRecordsFound }} {{# lc.acc_donationTab.filtered }}[ <a href="{{{ cr.links.acc_donation_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.acc_donationTab.filtered }}
+</div>
+{{/ lc.acc_donationTab.hasData }}
+
+{{# lc.acc_donationTab.hasData }}
+<div class="alert alert-info" role="alert"><strong>{{ cr.T.lab_RecordsFound }}:</strong> {{ lc.acc_donationTab.rowsNum }} {{# lc.acc_donationTab.filtered }}{{ cr.T.lab_withFilters }} [ <a href="{{{ cr.links.acc_donation_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.acc_donationTab.filtered }}</div>
+
+<table class="table table-sm table-striped table-hover table-responsive w-auto text-nowrap">
+  <thead>
+    <tr>
+      <th scope="col"><a href="{{ cr.links.acc_donation_list }}/1?order_by=rid&order_prog={{ lc.order_prog }}{{ lc.list_qs }}">{{ lc.acc_donationTab.T.title.rid }}</a></th>
+      <th scope="col" colspan="4">&nbsp;</th>
+    </tr>
+    <tr>
+{{{ lc.filterHTML }}}
+    </tr>
+  </thead>
+  <tbody>
+  {{# lc.acc_donationTab._data }}
+    <tr>
+      <th scope="row"><a href="{{{ cr.links.acc_donation_read }}}/{{ rid }}">{{ rid }}</a></th>
+      <td>&nbsp;<a href="{{{ cr.links.acc_donation_read }}}/{{ rid }}"><span class="oi oi-eye"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.acc_donation_update }}}/{{ rid }}"><span class="oi oi-pencil"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.acc_donation_delete }}}/{{ rid }}"><span class="oi oi-trash"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.acc_donation_create }}}?copy={{ rid }}"><span class="oi oi-copywriting"></span></a>&nbsp;</td>
+    </tr>
+  {{/ lc.acc_donationTab._data }}
+  </tbody>
+</table>
+
+{{{ lc.pagHTML }}}
+{{/ lc.acc_donationTab.hasData }}
+
+<a class="btn btn-sm btn-secondary" href="{{{ cr.links.acc_donation_create }}}" role="button">{{{ cr.T.btn_New }}}</a>
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

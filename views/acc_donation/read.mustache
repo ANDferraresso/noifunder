@@ -1,0 +1,32 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">CRM</li>
+      <li class="breadcrumb-item"><a href="{{ cr.links.acc_donation_list }}/1">Elenco</a></li>
+      <li class="breadcrumb-item active">Leggi</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>Leggi donatore</h1>
+
+{{{ lc.acc_donationTab.rendered }}}
+
+<div class="btn-group btn-group-sm" role="group">
+  <a class="btn btn-secondary" href="{{{ cr.links.acc_donation_update }}}/{{ lc.acc_donationTab.data.0.rid }}" role="button">{{{ cr.T.btn_Update }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.acc_donation_delete }}}/{{ lc.acc_donationTab.data.0.rid }}" role="button">{{{ cr.T.btn_Delete }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.acc_donation_create }}}?copy={{ lc.acc_donationTab.data.0.rid }}" role="button">{{{ cr.T.btn_Copy }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.acc_donation_create }}}" role="button">{{{ cr.T.btn_New }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.acc_donation_list }}}/1" role="button">{{{ cr.T.btn_List }}}</a>
+</div>
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

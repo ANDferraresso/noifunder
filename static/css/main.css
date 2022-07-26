@@ -1,0 +1,7 @@
+/* MAIN CSS FILE */ 
+
+
+table.table th, 
+table.table td {
+    padding: 4px 8px;
+}

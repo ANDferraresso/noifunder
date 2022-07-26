@@ -1,0 +1,59 @@
+{
+    "entTitle": "",
+    "title": {
+        "active": "Attivo",
+        "creation_dt": "Data creazione",
+        "creator_rid": "Creatore",
+        "email": "Email",
+        "email_token": "Token email",
+        "email_token_dl": "Scadenza token email",
+        "last_login": "Login più recente",
+        "last_logout": "Logout più recente",
+        "name": "Nome",
+        "rid": "ID",
+        "session_token": "Token sessione",
+        "session_token_dl": "Scadenza token sessione"
+    },
+    "msg": {
+        "active": "",
+        "creation_dt": "",
+        "creator_rid": "",
+        "email": "",
+        "email_token": "",
+        "email_token_dl": "",
+        "last_login": "",
+        "last_logout": "",
+        "name": "",
+        "rid": "",
+        "session_token": "",
+        "session_token_dl": ""
+    },
+    "info": {
+        "active": "",
+        "creation_dt": "",
+        "creator_rid": "",
+        "email": "",
+        "email_token": "",
+        "email_token_dl": "",
+        "last_login": "",
+        "last_logout": "",
+        "name": "",
+        "rid": "",
+        "session_token": "",
+        "session_token_dl": ""
+    },
+    "opts": {
+        "active": [],
+        "creation_dt": [],
+        "creator_rid": [],
+        "email": [],
+        "email_token": [],
+        "email_token_dl": [],
+        "last_login": [],
+        "last_logout": [],
+        "name": [],
+        "rid": [],
+        "session_token": [],
+        "session_token_dl": []
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "entTitle": "",
+    "title": {
+        "amount": "Importo",
+        "campaign_rid": "Campagna",
+        "creation_dt": "Data creazione",
+        "creator_rid": "Creatore",
+        "donor_rid": "Donatore",
+        "gift_date": "Data donazione",
+        "memo": "Annotazione",
+        "pay_method_rid": "Metodo di pagamento",
+        "project_rid": "Progetto",
+        "rid": "ID"
+    },
+    "msg": {
+        "amount": "Digitare un importo in formato 0.00.",
+        "campaign_rid": "",
+        "creation_dt": "",
+        "creator_rid": "",
+        "donor_rid": "",
+        "gift_date": "Formato data non corretto (AAAA-MM-GG).",
+        "memo": "",
+        "pay_method_rid": "Seleziona un’opzione valida.",
+        "project_rid": "",
+        "rid": ""
+    },
+    "info": {
+        "amount": "Formato 0.00",
+        "campaign_rid": "",
+        "creation_dt": "",
+        "creator_rid": "",
+        "donor_rid": "",
+        "gift_date": "",
+        "memo": "",
+        "pay_method_rid": "",
+        "project_rid": "",
+        "rid": ""
+    },
+    "opts": {
+        "amount": [],
+        "campaign_rid": [],
+        "creation_dt": [],
+        "creator_rid": [],
+        "donor_rid": [],
+        "gift_date": [],
+        "memo": [],
+        "pay_method_rid": [],
+        "project_rid": [],
+        "rid": []
+    }
+}

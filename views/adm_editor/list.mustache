@@ -1,0 +1,58 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">CRM</li>
+      <li class="breadcrumb-item active">Elenco</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>Elenco donatori</h1>
+
+{{^ lc.adm_editorTab.hasData }}
+<div class="alert alert-info" role="alert">
+  <strong>{{{ cr.T.msg_Attention }}}</strong> {{ cr.T.msg_NoRecordsFound }} {{# lc.adm_editorTab.filtered }}[ <a href="{{{ cr.links.adm_editor_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.adm_editorTab.filtered }}
+</div>
+{{/ lc.adm_editorTab.hasData }}
+
+{{# lc.adm_editorTab.hasData }}
+<div class="alert alert-info" role="alert"><strong>{{ cr.T.lab_RecordsFound }}:</strong> {{ lc.adm_editorTab.rowsNum }} {{# lc.adm_editorTab.filtered }}{{ cr.T.lab_withFilters }} [ <a href="{{{ cr.links.adm_editor_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.adm_editorTab.filtered }}</div>
+
+<table class="table table-sm table-striped table-hover table-responsive w-auto text-nowrap">
+  <thead>
+    <tr>
+      <th scope="col"><a href="{{ cr.links.adm_editor_list }}/1?order_by=rid&order_prog={{ lc.order_prog }}{{ lc.list_qs }}">{{ lc.adm_editorTab.T.title.rid }}</a></th>
+      <th scope="col" colspan="4">&nbsp;</th>
+    </tr>
+    <tr>
+{{{ lc.filterHTML }}}
+    </tr>
+  </thead>
+  <tbody>
+  {{# lc.adm_editorTab._data }}
+    <tr>
+      <th scope="row"><a href="{{{ cr.links.adm_editor_read }}}/{{ rid }}">{{ rid }}</a></th>
+      <td>&nbsp;<a href="{{{ cr.links.adm_editor_read }}}/{{ rid }}"><span class="oi oi-eye"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.adm_editor_update }}}/{{ rid }}"><span class="oi oi-pencil"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.adm_editor_delete }}}/{{ rid }}"><span class="oi oi-trash"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.adm_editor_create }}}?copy={{ rid }}"><span class="oi oi-copywriting"></span></a>&nbsp;</td>
+    </tr>
+  {{/ lc.adm_editorTab._data }}
+  </tbody>
+</table>
+
+{{{ lc.pagHTML }}}
+{{/ lc.adm_editorTab.hasData }}
+
+<a class="btn btn-sm btn-secondary" href="{{{ cr.links.adm_editor_create }}}" role="button">{{{ cr.T.btn_New }}}</a>
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

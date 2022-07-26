@@ -1,0 +1,33 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Admin }}</li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Countries }}</li>
+      <li class="breadcrumb-item"><a href="{{ cr.links.adm_country_list }}/1">{{ cr.T.tit_ListCountries }}</a></li>
+      <li class="breadcrumb-item active">Leggi</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>{{ cr.T.tit_ViewCountry }}</h1>
+
+{{{ lc.adm_countryTab.rendered }}}
+
+<div class="btn-group btn-group-sm" role="group">
+  <a class="btn btn-secondary" href="{{{ cr.links.adm_country_update }}}/{{ lc.adm_countryTab.data.0.rid }}" role="button">{{{ cr.T.btn_Update }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.adm_country_delete }}}/{{ lc.adm_countryTab.data.0.rid }}" role="button">{{{ cr.T.btn_Delete }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.adm_country_create }}}?copy={{ lc.adm_countryTab.data.0.rid }}" role="button">{{{ cr.T.btn_Copy }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.adm_country_create }}}" role="button">{{{ cr.T.btn_New }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.adm_country_list }}}/1" role="button">{{{ cr.T.btn_List }}}</a>
+</div>
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

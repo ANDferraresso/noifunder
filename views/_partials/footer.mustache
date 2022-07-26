@@ -1,0 +1,21 @@
+<footer>
+  <div class="container-fluid mt-1">
+    <hr />
+    <div class="row">
+      <div class="col">
+        Ver. {{ env.version }} 
+      </div><!-- /col -->
+    </div><!-- /row -->
+  </div>
+</footer>
+<script src="{{ env.static_url }}/ext-libs/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+<script>
+{{{ cr.js }}}
+</script>
+
+<script>
+document.getElementById("db_file_selector_id").addEventListener("change", function () {
+  let val = document.getElementById("db_file_selector_id").value;
+  window.location.href = "{{ cr.links.sys_app_parameter_change_db }}/" + val;
+});
+</script>

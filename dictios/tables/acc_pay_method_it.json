@@ -1,0 +1,27 @@
+{
+    "entTitle": "",
+    "title": {
+        "creation_dt": "Data creazione",
+        "creator_rid": "Creatore",
+        "name": "Nome",
+        "rid": "ID"
+    },
+    "msg": {
+        "creation_dt": "",
+        "creator_rid": "",
+        "name": "Da 3 a 50 caratteri. Caratteri consentiti: A-Z a-z 0-9 . - e spazio.",
+        "rid": ""
+    },
+    "info": {
+        "creation_dt": "",
+        "creator_rid": "",
+        "name": "",
+        "rid": ""
+    },
+    "opts": {
+        "creation_dt": [],
+        "creator_rid": [],
+        "name": [],
+        "rid": []
+    }
+}

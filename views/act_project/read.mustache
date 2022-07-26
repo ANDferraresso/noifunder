@@ -1,0 +1,80 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Activities }}</li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Projects }}</li>
+      <li class="breadcrumb-item"><a href="{{ cr.links.act_project_list }}/1">{{ cr.T.tit_ListProjects }}</a></li>
+      <li class="breadcrumb-item active">{{ cr.T.tit_View }}</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>{{ cr.T.tit_ViewProject }}</h1>
+
+{{{ lc.act_projectTab.rendered }}}
+
+<div class="btn-group btn-group-sm mb-4" role="group">
+  <a class="btn btn-secondary" href="{{{ cr.links.act_project_update }}}/{{ lc.act_projectTab.data.0.rid }}" role="button">{{{ cr.T.btn_Update }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.act_project_delete }}}/{{ lc.act_projectTab.data.0.rid }}" role="button">{{{ cr.T.btn_Delete }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.act_project_create }}}?copy={{ lc.act_projectTab.data.0.rid }}" role="button">{{{ cr.T.btn_Copy }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.act_project_create }}}" role="button">{{{ cr.T.btn_New }}}</a>
+  <a class="btn btn-secondary" href="{{{ cr.links.act_project_list }}}/1" role="button">{{{ cr.T.btn_List }}}</a>
+</div>
+
+<h3>Campagne del progetto</h3>
+{{^ lc.act_campaignTab.hasData }}
+<div class="alert alert-info" role="alert">
+  <strong>{{{ cr.T.msg_Attention }}}</strong> {{ cr.T.msg_NoRecordsFound }} {{# lc.act_campaignTab.filtered }}[ <a href="{{{ cr.links.act_campaign_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.act_campaignTab.filtered }}
+</div>
+{{/ lc.act_campaignTab.hasData }}
+
+{{# lc.act_campaignTab.hasData }}
+<div class="alert alert-info" role="alert"><strong>{{ cr.T.lab_RecordsFound }}:</strong> {{ lc.act_campaignTab.rowsNum }} {{# lc.act_campaignTab.filtered }}{{ cr.T.lab_withFilters }} [ <a href="{{{ cr.links.act_campaign_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.act_campaignTab.filtered }}</div>
+
+<table class="table table-sm table-striped table-hover table-responsive w-auto text-nowrap">
+  <thead>
+    <tr>
+      <th scope="col">{{ lc.act_campaignTab.T.title.rid }}</th>
+      <th scope="col">{{ lc.act_campaignTab.T.title.code }}</th>
+      <th scope="col">{{ lc.act_campaignTab.T.title.title }}</th>
+      <th scope="col">{{ lc.act_campaignTab.T.title.status }}</th>
+      <th scope="col">{{ lc.act_campaignTab.T.title.start_date }}</th>
+      <th scope="col">{{ lc.act_campaignTab.T.title.deadline }}</th>
+      <th scope="col" colspan="4">&nbsp;</th>
+    </tr>
+    <tr>
+{{{ lc.filterHTML }}}
+    </tr>
+  </thead>
+  <tbody>
+  {{# lc.act_campaignTab._data }}
+    <tr>
+      <th scope="row"><a href="{{{ cr.links.act_campaign_read }}}/{{ rid }}">{{ rid }}</a></th>
+      <td>{{ code }}</td>
+      <td>{{ title }}</td>
+      <td>{{ status }}</td>
+      <td>{{ start_date }}</td>
+      <td>{{ deadline }}</td>
+      <td>&nbsp;<a href="{{{ cr.links.act_campaign_read }}}/{{ rid }}"><span class="oi oi-eye"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.act_campaign_update }}}/{{ rid }}"><span class="oi oi-pencil"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.act_campaign_delete }}}/{{ rid }}"><span class="oi oi-trash"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.act_campaign_create }}}?copy={{ rid }}"><span class="oi oi-copywriting"></span></a>&nbsp;</td>
+    </tr>
+  {{/ lc.act_campaignTab._data }}
+  </tbody>
+</table>
+
+{{{ lc.pagHTML }}}
+{{/ lc.act_campaignTab.hasData }}
+
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

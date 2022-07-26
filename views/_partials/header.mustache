@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ cr.lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>NoiFunder</title>
+  <script src="{{ env.static_url }}/ext-libs/axios-0.27.2/axios.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ env.static_url }}/ext-libs/bootstrap-5.1.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ env.static_url }}/ext-libs/openiconic-1.1.0/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ env.static_url }}/css/main.css" />
+  <link rel="icon" href="{{ env.static_url }}/favicon.ico" />
+</head>
+<body>
+
+<div class="container-fluid mt-1">
+  <div class="alert alert-secondary" role="alert" style="padding-top:0.5rem; padding-bottom:0.5rem;">
+    <strong>{{ env.app_name }}</strong>
+  </div>
+</div><!-- /container -->
+
+<div class="container-fluid mt-1 mb-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{{ env.static_url }}/img/logo.svg" height="32" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ cr.links.home }}">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="actDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ cr.T.tit_Activities }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="actDropdownnn">
+            <li><a class="dropdown-item" href="{{ cr.links.act_project_list }}/1">{{ cr.T.tit_ListProjects }}</a></li>
+            <li><a class="dropdown-item" href="{{ cr.links.act_project_create }}">{{ cr.T.tit_NewProject }}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ cr.links.act_campaign_list }}/1">{{ cr.T.tit_ListCampaigns }}</a></li>
+            <li><a class="dropdown-item" href="{{ cr.links.act_campaign_create }}">{{ cr.T.tit_NewCampaign }}</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="sysAcc" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ cr.T.tit_Accounting }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="sysAccn">
+            <li><a class="dropdown-item" href="{{ cr.links.acc_gift_list }}/1">{{ cr.T.tit_ListGifts }}</a></li>
+            <li><a class="dropdown-item" href="{{ cr.links.acc_gift_create }}">{{ cr.T.tit_NewGift }}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ cr.links.acc_pay_method_list }}/1">{{ cr.T.tit_ListPayMethods }}</a></li>
+            <li><a class="dropdown-item" href="{{ cr.links.acc_pay_method_create }}">{{ cr.T.tit_NewPayMethod }}</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="crmDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ cr.T.tit_CRM }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="crmDropdownnn">
+            <li><a class="dropdown-item" href="{{ cr.links.crm_donor_list }}/1">{{ cr.T.tit_ListDonors }}</a></li>
+            <li><a class="dropdown-item" href="{{ cr.links.crm_donor_create }}">{{ cr.T.tit_NewDonor }}</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="admDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ cr.T.tit_Admin }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="admDropdown">
+            <li><a class="dropdown-item" href="{{ cr.links.adm_editor_list }}/1">{{ cr.T.tit_ListEditors }}</a></li>
+            <li><a class="dropdown-item" href="{{ cr.links.adm_editor_create }}">{{ cr.T.tit_NewEditor }}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ cr.links.adm_country_list }}/1">{{ cr.T.tit_ListCountries }}</a></li>
+            <li><a class="dropdown-item" href="{{ cr.links.adm_country_create }}">{{ cr.T.tit_NewCountry }}</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+</div><!-- /container -->

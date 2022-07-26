@@ -1,0 +1,60 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Accounting }}</li>
+      <li class="breadcrumb-item">{{ cr.T.tit_PayMethods }}</li>
+      <li class="breadcrumb-item active">{{ cr.T.tit_List }}</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>{{ cr.T.tit_ListPayMethods }}</h1>
+
+{{^ lc.acc_pay_methodTab.hasData }}
+<div class="alert alert-info" role="alert">
+  <strong>{{{ cr.T.msg_Attention }}}</strong> {{ cr.T.msg_NoRecordsFound }} {{# lc.acc_pay_methodTab.filtered }}[ <a href="{{{ cr.links.acc_pay_method_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.acc_pay_methodTab.filtered }}
+</div>
+{{/ lc.acc_pay_methodTab.hasData }}
+
+{{# lc.acc_pay_methodTab.hasData }}
+<div class="alert alert-info" role="alert"><strong>{{ cr.T.lab_RecordsFound }}:</strong> {{ lc.acc_pay_methodTab.rowsNum }} {{# lc.acc_pay_methodTab.filtered }}{{ cr.T.lab_withFilters }} [ <a href="{{{ cr.links.acc_pay_method_list }}}/1">{{ cr.T.lab_withoutFilters }}</a> ]{{/ lc.acc_pay_methodTab.filtered }}</div>
+
+<table class="table table-sm table-striped table-hover table-responsive w-auto text-nowrap">
+  <thead>
+    <tr>
+      <th scope="col"><a href="{{ cr.links.acc_pay_method_list }}/1?order_by=rid&order_prog={{ lc.order_prog }}{{ lc.list_qs }}">{{ lc.acc_pay_methodTab.T.title.rid }}</a></th>
+      <th scope="col"><a href="{{ cr.links.acc_pay_method_list }}/1?order_by=name&order_prog={{ lc.order_prog }}{{ lc.list_qs }}">{{ lc.acc_pay_methodTab.T.title.name }}</a></th>
+      <th scope="col" colspan="4">&nbsp;</th>
+    </tr>
+    <tr>
+{{{ lc.filterHTML }}}
+    </tr>
+  </thead>
+  <tbody>
+  {{# lc.acc_pay_methodTab.data }}
+    <tr>
+      <th scope="row"><a href="{{{ cr.links.acc_pay_method_read }}}/{{ rid }}">{{ rid }}</a></th>
+      <td>{{ name }}</td>
+      <td>&nbsp;<a href="{{{ cr.links.acc_pay_method_read }}}/{{ rid }}"><span class="oi oi-eye"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.acc_pay_method_update }}}/{{ rid }}"><span class="oi oi-pencil"></span></a>&nbsp;</td>
+      <td>&nbsp;<a href="{{{ cr.links.acc_pay_method_delete }}}/{{ rid }}"><span class="oi oi-trash"></span></a>&nbsp;</td>
+    </tr>
+  {{/ lc.acc_pay_methodTab.data }}
+  </tbody>
+</table>
+
+{{{ lc.pagHTML }}}
+{{/ lc.acc_pay_methodTab.hasData }}
+
+<a class="btn btn-sm btn-secondary" href="{{{ cr.links.acc_pay_method_create }}}" role="button">{{{ cr.T.btn_New }}}</a>
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

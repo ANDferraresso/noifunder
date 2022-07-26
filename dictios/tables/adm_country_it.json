@@ -1,0 +1,43 @@
+{
+    "entTitle": "",
+    "title": {
+        "active": "Attivo",
+        "code": "Codice",
+        "creation_dt": "Data creazione",
+        "creator_rid": "Creatore",
+        "currency": "Moneta",
+        "eu": "EU",
+        "name": "Nome",
+        "rid": "ID"
+    },
+    "msg": {
+        "active": "Sì o no.",
+        "code": "Digitare da 2 caratteri maiuscoli.",
+        "creation_dt": "",
+        "creator_rid": "",
+        "currency": "Digitare 3 caratteri maiuscoli.",
+        "eu": "Sì o no.",
+        "name": "Digitare da 2 a 50 caratteri.",
+        "rid": ""
+    },
+    "info": {
+        "active": "",
+        "code": "",
+        "creation_dt": "",
+        "creator_rid": "",
+        "currency": "",
+        "eu": "",
+        "name": "",
+        "rid": ""
+    },
+    "opts": {
+        "active": [{"0": "No"}, {"1": "Sì"}],
+        "code": [],
+        "creation_dt": [],
+        "creator_rid": [],
+        "currency": [],
+        "eu": [{"0": "No"}, {"1": "Sì"}],
+        "name": [],
+        "rid": []
+    }
+}

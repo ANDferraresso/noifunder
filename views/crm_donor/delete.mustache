@@ -1,0 +1,39 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">{{ cr.T.tit_CRM }}</li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Donors }}</li>
+      <li class="breadcrumb-item"><a href="{{ cr.links.crm_donor_list }}/1">{{ cr.T.tit_ListDonors }}</a></li>
+      <li class="breadcrumb-item active">{{ cr.T.tit_Delete }}</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>Elimina donatore</h1>
+
+{{# cr.method_GET }}
+{{/ cr.method_GET }}
+
+{{# cr.method_POST }}
+<div class="alert alert-warning">
+  <strong>{{{ cr.T.msg_Attention }}}</strong> {{{ lc.alert }}}
+</div>
+{{/ cr.method_POST }}
+
+{{{ lc.crm_donorTab.rendered }}}
+{{{ lc.crm_donorTab.renderedForm }}}
+
+<br />
+
+<p><a href="{{{ cr.links.crm_donor_list }}}/1">{{{ cr.T.lab_CancelOperation }}}</a></p>
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

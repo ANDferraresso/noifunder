@@ -1,0 +1,34 @@
+{{> header }}
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ cr.links.home }}">Home</a></li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Activities }}</li>
+      <li class="breadcrumb-item">{{ cr.T.tit_Campaigns }}</li>
+      <li class="breadcrumb-item"><a href="{{ cr.links.act_campaign_list }}/1">{{ cr.T.tit_ListCampaigns }}</a></li>
+      <li class="breadcrumb-item active">{{ cr.T.tit_New }}</li>
+    </ol>
+  </nav>
+</div><!-- /container -->
+
+<main role="main">
+<div class="container-fluid">
+<h1>{{ cr.T.tit_NewCampaign }}</h1>
+
+{{# cr.method_GET }}
+{{/ cr.method_GET }}
+
+{{# cr.method_POST }}
+<div class="alert alert-warning">
+  <strong>{{{ cr.T.msg_Attention }}}</strong> {{{ lc.alert }}}
+</div>
+{{/ cr.method_POST }}
+
+{{{ lc.act_campaignTab.renderedForm }}}
+
+</div><!-- /container -->
+</main>
+
+{{> footer }}
+{{> close_html }}

@@ -1,0 +1,47 @@
+{
+    "entTitle": "",
+    "title": {
+        "code": "Codice",
+        "creation_dt": "Data creazione",
+        "creator_rid": "Creatore",
+        "deadline": "Scadenza",
+        "memo": "Memo",
+        "rid": "ID",
+        "start_date": "Data inizio",
+        "status": "Status",
+        "title": "Titolo"
+    },
+    "msg": {
+        "code": "Digitare 6 caratteri (esatti).  Caratteri consentiti: A-Z 0-9.",
+        "creation_dt": "",
+        "creator_rid": "",
+        "deadline": "Formato data non corretto.",
+        "memo": "",
+        "rid": "",
+        "start_date": "Formato data non corretto.",
+        "status": "Seleziona un’opzione valida.",
+        "title": "Digitare da 5 a 30 caratteri."
+    },
+    "info": {
+        "code": "Digita un codice di 6 caratteri A-Z 0-9.",
+        "creation_dt": "",
+        "creator_rid": "",
+        "deadline": "",
+        "memo": "",
+        "rid": "",
+        "start_date": "",
+        "status": "",
+        "title": ""
+    },
+    "opts": {
+        "code": [],
+        "creation_dt": [],
+        "creator_rid": [],
+        "deadline": [],
+        "memo": [],
+        "rid": [],
+        "start_date": [],
+        "status": [{"O": "Aperto"}, {"C": "Chiuso"}, {"S": "Sospeso"}, {"D": "Cancellato"}],
+        "title": []
+    }
+}
